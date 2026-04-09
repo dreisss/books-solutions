@@ -1,0 +1,58 @@
+\documentclass[12pt, openright, a4paper, twoside, english, brazil]{article}
+\usepackage[top=0.5cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage[T1]{fontenc}
+
+\usepackage{enumerate}
+
+\newcommand{\cqd}{\hfill $\square$}
+\newcommand{\forallN}{$\forall n\in \mathbb N$}
+\newcommand{\forallNp}{$\forall n\in \mathbb N^*$}
+\newenvironment{solution}[1][]{\noindent\textbf{Solução#1:} }{\cqd}
+
+% -----------------------------------------------------------------------------
+
+\title{FME Vol. 03 - Appendix (Solutions)}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+Demonstre, usando o princípio da indução finita.
+
+\begin{enumerate}[\bfseries 1.]
+    \setcounter{enumi}{97}
+  \item $1+2+3+...+n=\frac{n(n+1)}{2}$,\forallNp
+  \item $2+5+8+...+(2+3n)=\frac{(n+1)(4+3n)}{2}$, \forallN
+  \item $2^0+2^1+2^2+...+2^{n-1}=2^n-1$, \forallNp
+  \item $1^2+2^2+3^2+...+n^2=\frac{n(n+1)(2n+1)}{2}$, \forallNp
+  \item $1^3+2^3+3^3+...+n^3=\lbrack \frac{n(n+1)}{2}\rbrack^2$, \forallNp
+  \item $8|(3^{2n}-1)$, \forallNp
+  \item $6|n(n+1)(n+2)$, \forallN
+  \item $2|(n^2+n)$, \forallN
+  \item $3|(n^3+2n)$, \forallN
+  \item $(1+1)(1+\frac 1 2)(1+\frac 1 3)...(1+\frac 1 n)=n+1$, \forallNp
+  \item $\frac{1}{1\cdot 2}+\frac{1}{2\cdot 3}+\frac{1}{3\cdot
+    4}+...+\frac{1}{n(n+1)}=\frac{n}{n+1}$, \forallNp
+  \item $1\cdot 2+2\cdot 3+3\cdot 4+...+n(n+1)=\frac{n(n+1)(n+2)}{3}$, \forallNp
+  \item $2n\ge n+1$, \forallNp
+  \item $2^n>n$, \forallNp
+  \item $1^3+2^3+3^3+...+n^3>\frac{n^4}{4}$, \forallNp
+  \item $(1+a)^n\ge1+na$, \forallNp, $\forall a\in \mathbb R$, $a\ge-1$
+  \item O número de diagonais de um polígono convexo de $n$ lados é
+    $d_n=\frac{n(n-3)}{2}$
+  \item A soma das medidas dos ângulos internos de um polígono
+    convexo de $n$ lados é $S_n=(n-2)\cdot 180$°
+  \item Se $A$ é conjunto finito com $n$ elementos, então $\mathcal P(A)$,
+    conjunto das partes de $A$, tem $2^n$ elementos
+\end{enumerate}
+
+\end{document}
