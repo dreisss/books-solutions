@@ -1,0 +1,356 @@
+\documentclass[12pt, openright, a4paper, twoside, english, brazil]{article}
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{titlesec}
+\usepackage{libertine}
+\usepackage{newtxmath}
+
+\usepackage{enumerate}
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+\newcommand{\df}[2]{\frac{d#1}{d#2}}
+
+\titleformat{\section}[block]{\bf\raggedright\normalsize}{\thesection}{1em}{}[]
+\titlespacing*{\section}{0pt}{1.5em}{0.75em}[0pt]
+\titleformat{\subsection}[block]{\raggedright\normalsize}{\bf\thesubsection.}{1em}{}[]
+\titlespacing*{\subsection}{0pt}{1.5em}{0.75em}[0pt]
+
+% -----------------------------------------------------------------------------
+
+\title{Soluções - Redes Neurais Artificiais: Princípios e prática}
+\author{Capítulo 1 - Introdução}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Modelos de um neurônio}
+
+\subsection{Um exemplo de função logística é definida por}
+$$
+\varphi(v)=\frac{1}{1+\exp(-av)}
+$$
+cujos valores limites são $0$ e $1$. Mostre que a derivada de
+$\varphi(v)$ em relação a $v$ é dada por
+$$
+\df{\varphi}{v}=a\varphi(v)[1-\varphi(v)]
+$$
+Qual é o valor desta derivada na origem?
+
+\subsection{Uma função sigmóide ímpar é definida por}
+$$
+\varphi(v)=\frac{1-\exp(-av)}{1+\exp(-av)}=\tanh(\frac{av}{2})
+$$
+onde $\tanh$ representa a tangente hiperbólica. Os valores limites
+desta segunda função sigmóide são $-1$ e $+1$. Mostre que a derivada de
+$\varphi(v)$ em relação a $v$ é dada por
+$$
+\df{\varphi}{v}=\frac a2[1-\varphi^2(v)]
+$$
+Qual é  valor desta derivada na origem? Suponha que o parâmetro de
+inclinação $a$ seja infinitamente grande. Qual é a forma resultante de
+$\varphi(v)$?
+
+\subsection{Uma outra função sigmóide ímpar é a sigmóide algébrica:}
+$$
+\varphi(v)=\frac v{\sqrt{1+v^2}}
+$$
+cujos valores limites são $-1$ e $+1$. Mostre que a derivada de
+$\varphi(v)$ em relação a $v$ é dada por
+$$
+\df{\varphi}{v}=\frac{\varphi^3(v)}{v^3}
+$$
+Qual é o valor desta derivada na origem?
+
+\subsection{Considere as duas seguintes funções:}
+\begin{enumerate}[\bfseries (i)]
+  \item
+    $\displaystyle\varphi(v)=\frac1{\sqrt{2\pi}}\int_{-\infty}^{\infty}\exp(-\frac{x^2}{2})dx$
+
+  \item $\displaystyle\varphi(v)=\frac2\pi\tan^{-1}(v)$
+\end{enumerate}
+Explique por que estas funções satisfazem os requisitos de uma
+função sigmóide. De que modo estas duas funções diferem entre si?
+
+\subsection{Qual das cinco funções sigmóides descritas nos Problemas
+  1.1 a 1.4 seria qualificada como uma função de distribuição (de
+  probabilidade) cumulativa? Justifique a sua resposta.
+}
+
+\subsection{Considere a função de ativação pseudolinear $\varphi(v)$
+mostrada na Fig. P1.6.}
+\begin{center}
+  \begin{tikzpicture}
+    \begin{axis}[
+        axis lines = center,
+        xlabel = \(v\),ylabel = \(\varphi(v)\),
+        yscale = 0.5,
+        xtick distance=3, ytick distance=3,
+        xmin=-2, xmax=2,
+        ymin=0, ymax=2,
+        legend pos=north west,
+        extra x ticks={0, -0.5, 0.5},
+        extra x tick labels={0, \(-0.5a\), \(0.5a\)},
+        extra y ticks={0.5, 1},
+        extra y tick labels={\(0.5b\), \(b\)}
+      ]
+
+      \addplot [domain=-5:5, color=blue] coordinates {(-5, 0)(-0.5,0)};
+      \addplot [domain=-0.5:0.5, color=blue] coordinates {(-0.5, 0)(0.5,1)};
+      \addplot [domain=-5:5, color=blue] coordinates {(0.5,1)(5,1)};
+
+      \addplot [domain=-5:5, style=dashed] coordinates {(0.5,0)(0.5,1)};
+      \addplot [domain=-5:5, style=dashed] coordinates {(0,1)(0.5,1)};
+    \end{axis}
+  \end{tikzpicture}
+\end{center}
+\begin{enumerate}[a)]
+\item Formule $\varphi(v)$ como uma função de $v$.
+\item O que acontece com $\varphi(v)$ se $a$ aproximar-se de zero?
+\end{enumerate}
+
+\subsection{Repita o Problema 1.6 para a função de ativação
+pseudolinear $\varphi(v)$ mostrada na Fig. P1.7.}
+\begin{center}
+\begin{tikzpicture}
+  \begin{axis}[
+      axis lines = center,
+      xlabel = \(v\),ylabel = \(\varphi(v)\),
+      xtick distance=3, ytick distance=3,
+      xmin=-2, xmax=2,
+      ymin=-2, ymax=2,
+      legend pos=north west,
+      extra x ticks={-1, 0, 1},
+      extra x tick labels={\(-a\), 0, \(a\)},
+      extra y ticks={-1, 1},
+      extra y tick labels={\(-b\), \(b\)}
+    ]
+
+    \addplot [domain=-5:5, color=blue] coordinates {(-5, -1)(-1,-1)};
+    \addplot [domain=-0.5:0.5, color=blue] coordinates {(-1, -1)(1,1)};
+    \addplot [domain=-5:5, color=blue] coordinates {(1,1)(5,1)};
+
+    \addplot [domain=-5:5, style=dashed] coordinates {(1,0)(1,1)};
+    \addplot [domain=-5:5, style=dashed] coordinates {(0,1)(1,1)};
+    \addplot [domain=-5:5, style=dashed] coordinates {(-1,0)(-1,-1)};
+    \addplot [domain=-5:5, style=dashed] coordinates {(0,-1)(-1,-1)};
+  \end{axis}
+\end{tikzpicture}
+\end{center}
+
+\subsection{Um neurônio tem uma função de ativação $\varphi(v)$
+definida pela função logística do problema 1.1, onde $v$ é o campo
+local induzido, e o parâmetro de inclinação $a$ está disponível para
+ajustes. Considere que $x_1,x_2,...,x_m$, representem os sinais de
+entrada aplicados aos nós de fonte do neurônio e que $b$ represente o
+bias. Por conveniência de representação, podemos fazer com que o
+parâmetro de inclinação $a$ seja absorvido pelo campo local induzido
+$v$, escrevendo}
+$$
+\varphi(v)=\frac1{1+\exp(-v)}
+$$
+Como você modificaria as entradas $x_1,x_2,...,x_m$ de forma a
+produzir a mesma saída de antes? Justifique a sua resposta.
+
+\subsection{Um neurônio $j$ recebe entradas de quatro outros
+neurônios cujos níveis de ativação são $10, -20,4,-2$. Os respectivos
+pesos sinápticos do neurônio $j$ são $0.8, 0.2, -1.0$ e $-0.9$.
+Calcule a saída do neurônio $j$ para as duas seguintes situações:}
+\begin{enumerate}[(a)]
+\item O neurônio é linear
+\item O neurônio é representado por um modelo de McCulloch-Pitts.
+\end{enumerate}
+Assuma que o bias aplicado ao neurônio é zero.
+
+\subsection{Repita o Problema 1.9 para um modelo de neurônio baseado
+na função logística}
+$$
+\varphi(v)=\frac 1{1+\exp(-v)}
+$$
+
+\subsection{}
+\begin{enumerate}[(a)]
+\item Mostre que o modelo formal de McCulloch-Pitts de um neurônio
+  pode ser aproximado por um neurônio sigmóide (i.e., um neurônio que
+  utiliza uma função de ativação sigmóide) com pesos sinápticos grandes.
+\item Mostre que o neurônio linear pode ser aproximado por um
+  neurônio sigmóide com pesos sinápticos pequenos.
+\end{enumerate}
+
+\section{Arquitetura de rede}
+\setcounter{section}{1}
+\setcounter{subsection}{11}
+
+\subsection{Uma rede alimentada adiante totalmente conectada tem 10
+nós de fonte, 2 camadas ocultas, uma com 4 neurônios e a outra com 3
+neurônios em um único neurônio de saída. Construa um grafo
+arquitetural desta rede.}
+
+\subsection{}
+\begin{center}
+\begin{tikzpicture}[shorten >=1pt,->]
+  \tikzstyle{vertex}=[thick, circle, draw, inner sep = 1.5pt]
+
+  \node[vertex] (N_1_1) at (0, 1) {};
+  \node[vertex] (N_1_2) at (0,-1) {};
+  \node[vertex] (N_2_1) at (2, 1) {};
+  \node[vertex] (N_2_2) at (2,-1) {};
+  \node[vertex] (N_3_1) at (4, 1) {};
+  \node[vertex] (N_3_2) at (4,-1) {};
+  \node[vertex] (N_4_1) at (6, 1) {};
+  \node[vertex] (N_4_2) at (6,-1) {};
+  \node[vertex] (N_5_1) at (8, 1) {};
+  \node[vertex] (N_5_2) at (8,-1) {};
+  \node[vertex] (N_6_1) at (10,0) {};
+  \node[vertex] (N_7_1) at (12,0) {};
+
+  \draw [thick, ->] (N_1_1) -- (N_2_1) node[midway, above] {5};
+  \draw [thick, ->] (N_1_2) -- (N_2_2) node[midway, below] {-3};
+  \draw [thick, ->] (N_1_1) -- (N_2_2) node[pos=0.65, below ] {2};
+  \draw [thick, ->] (N_1_2) -- (N_2_1) node[pos=0.65, above ] {1};
+
+  \draw [thick, ->] (N_2_1) -- (N_3_1) node[midway, above] {\(\varphi(\cdot)\)};
+  \draw [thick, ->] (N_2_2) -- (N_3_2) node[midway, below] {\(\varphi(\cdot)\)};
+
+  \draw [thick, ->] (N_3_1) -- (N_4_1) node[midway, above] {3};
+  \draw [thick, ->] (N_3_2) -- (N_4_2) node[midway, below] {6};
+  \draw [thick, ->] (N_3_1) -- (N_4_2) node[pos=0.65, below] {4};
+  \draw [thick, ->] (N_3_2) -- (N_4_1) node[pos=0.65, above] {-1};
+
+  \draw [thick, ->] (N_4_1) -- (N_5_1) node[midway, above] {\(\varphi(\cdot)\)};
+  \draw [thick, ->] (N_4_2) -- (N_5_2) node[midway, below] {\(\varphi(\cdot)\)};
+
+  \draw [thick, ->] (N_5_1) -- (N_6_1) node[midway, above] {-2};
+  \draw [thick, ->] (N_5_2) -- (N_6_1) node[midway, below] {1};
+
+  \draw [thick, ->] (N_6_1) -- (N_7_1) node[midway, above] {\(\varphi(\cdot)\)};
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[(a)]
+\item A Figura 1.13 mostra um grafo de fluxo de sinal de uma rede
+  2-2-2-1 alimentada adiante. A função $\varphi(\cdot)$ representa
+  uma função logística. Escreva o mapeamento de entrada-saída
+  definido por esta rede.
+\item Suponha que o neurônio de saída do grafo de fluxo de sinal da
+  Fig. P1.13 opere na sua região linear. Escreva o mapeamento de
+  entrada-saída definido por esta nova rede.
+\end{enumerate}
+
+\subsection{A rede descrita na Fig. P1.13 não tem bias. Suponha que
+bias iguais a $-1$ e $+1$ sejam aplicados aos neurônios superior e
+inferior da primeira camada oculta, e bias iguais a $+1$ e $-2$ sejam
+aplicados aos neurônios superior e inferior da segunda camada oculta,
+respectivamente. Escreva a nova forma do mapeamento de entrada-saída
+definido pela rede.}
+
+\subsection{Considere uma rede de múltiplas camadas alimentada
+adiante, na qual todos os neurônios operam nas suas regiões lineares.
+Justifique a afirmação de que esta rede é equivalente a uma rede
+alimentada adiante de camada única.}
+
+\subsection{Construa uma rede totalmente recorrente com 5 neurônios,
+mas sem auto-realimentação.}
+
+\subsection{A Figura P1.17 mostra um grafo de fluxo de sinal de uma
+rede recorrente constituída de dois neurônios. Escreva a equação de
+diferenças não-linear que define a evolução de $x_1(n)$ ou de
+$x_2(n)$. Estas duas variáveis definem as saídas dos neurônios
+superior e inferior, respectivamente. Qual é a ordem desta equação?}
+\begin{center}
+\begin{tikzpicture}[shorten >=1pt,->]
+  \tikzstyle{neuron}=[circle, fill=black!20, draw, inner sep = 7pt]
+  \tikzstyle{delay}=[rectangle, draw, minimum size = 0.8cm, minimum
+  height = 0.8cm]
+
+  \node[delay] (D_1) at (0, 3) {\(z^{-1}\)};
+  \node[delay] (D_2) at (0, 2) {\(z^{-1}\)};
+  \node[neuron] (N_1) at (0, 1) {};
+  \node[neuron] (N_2) at (0, 0) {};
+
+  % alternativa com curvas suaves
+  % \draw [thick, ->]  (N_1) to [out=0, in=0 ] (D_1) node[] {};
+  % \draw [thick, ->] (N_2) to [out=0, in=0] (D_2) node[] {};
+  % \draw [thick, ->] (D_1) to [out=180, in=180] (N_2) node[] {};
+  % \draw [thick, ->] (D_2) to [out=180, in=180] (N_1) node[] {};
+  %
+  \draw [thick, ->] (N_1) -- ++(1,0) |- (D_1);
+  \draw [thick, ->] (N_2) -- ++(1.5,0) |- (D_2);
+
+  \draw [thick, ->] (D_1) -- ++(-1.5,0) |- (N_2);
+  \draw [thick, ->] (D_2) -- ++(-1,0) |- (N_1);
+\end{tikzpicture}
+\end{center}
+
+\subsection{A Figura P1.18 mostra o grafo de fluxo de sinal de uma
+rede recorrente que consiste de dois neurônios com
+auto-realimentação. Escreva o sistema acoplado de duas equações de
+diferenças de primeira ordem que descrevem a operação do sistema.}
+\begin{center}
+\begin{tikzpicture}[shorten >=1pt,->]
+  \tikzstyle{neuron}=[circle, fill=black!20, draw, inner sep = 7pt]
+  \tikzstyle{delay}=[rectangle, draw, minimum size = 0.8cm, minimum
+  height = 0.8cm]
+
+  \node[delay] (D_1) at (0, 3) {\(z^{-1}\)};
+  \node[delay] (D_2) at (0, 2) {\(z^{-1}\)};
+  \node[neuron] (N_1) at (0, 1) {};
+  \node[neuron] (N_2) at (0, 0) {};
+
+  \draw [thick, ->] (N_1) -- ++(1,0) |- (D_1);
+  \draw [thick, ->] (N_2) -- ++(1.5,0) |- (D_2);
+
+  \draw [thick, ->] (D_1) -- ++(-1.5,0) -- ++(0, -3.5) -- (N_2);
+  \draw [thick, ->] (D_1) -- ++(-1.5,0) -- ++(0,-1.5) -- (N_1);
+  \draw [thick, ->] (D_2) -- ++(-1,0) -- ++(0,-1.25) -- (N_1);
+  \draw [thick, ->] (D_2) -- ++(-1,0) -- ++(0,-1.75) -- (N_2);
+
+\end{tikzpicture}
+\end{center}
+
+\subsection{Uma rede recorrente tem 3 nós de fonte, 2 neurônios
+ocultos e 4 neurônios de saída. Construa um grafo arquitetural que
+descreva esta rede.}
+
+\section{Representação do conhecimento}
+\setcounter{section}{1}
+\setcounter{subsection}{19}
+
+\subsection{Uma forma útil de pré-processamento se baseia no modelo
+auto-regressivo (AR) descrito pela equação de diferenças (para dados
+de valores reais)}
+$$
+y(n)=w_1y(x-1)+w_2y(n-2)+...+w_My(n-M)+v(n)
+$$
+onde $y(n)$ é a saída do modelo; $v(n)$ é uma amostra retirada de um
+processo de ruído branco com média zero e uma variância predefinida;
+$w_1,w_2,...,w_M$, são os coeficientes do modelo AR; e M é a ordem do
+modelo. Mostre que o uso deste modelo fornece duas formas de
+invariância geométrica: (a) em escala e (b) em translação temporal.
+Como estas duas invariâncias poderiam ser utilizadas em redes neurais?
+
+\subsection{Considere que $\mathbf x$ seja um vetor de entrada e que
+$\mathbf s(\alpha,\mathbf x)$ seja um operador de transformação agindo
+sobre $\mathbf x$ e dependente de um parâmetro $\alpha$. O operador
+$\mathbf s(\alpha, \mathbf x)$ satisfaz dois requisitos:}
+\begin{itemize}
+\item $\mathbf s(0, \mathbf x)=0$
+\item $\mathbf s(0, \mathbf x)$ é diferenciável em relação a $\alpha$.
+\end{itemize}
+O vetor tangente é definido pela derivada parcial $\partial\mathbf
+s(\alpha,\mathbf x)/\partial\alpha$ (Simard et al., 1992). Suponha
+que $\mathbf x$ represente uma imagem e que $\alpha$ seja um
+parâmetro de rotação. Como você calcularia o vetor tangente para o
+caso em que $\alpha$ é pequeno? O vetor tangente é localmente
+invariante em relação à rotação da imagem original; por quê?
+
+\end{document}
