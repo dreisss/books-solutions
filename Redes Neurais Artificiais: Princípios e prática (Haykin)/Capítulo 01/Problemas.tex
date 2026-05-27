@@ -15,8 +15,17 @@
 \usepackage{enumerate}
 \usepackage{tikz}
 \usepackage{pgfplots}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=false,
+  urlbordercolor=red,
+  pdfborderstyle={/S/U/W 1}
+}
 
+\newenvironment{solution}{\color{red}\noindent\textbf{Solução:}\\}{\color{black}}
 \newcommand{\df}[2]{\frac{d#1}{d#2}}
+\newcommand{\ghlink}[2]{\href{https://github.com/dreisss/study-notes/blob/main/#1}{#2}}
+\newcommand{\difflink}[1]{\ghlink{Differentiation/Real/Abstract_pt.pdf}{#1}}
 
 \titleformat{\section}[block]{\bf\raggedright\normalsize}{\thesection}{1em}{}[]
 \titlespacing*{\section}{0pt}{1.5em}{0.75em}[0pt]
@@ -35,6 +44,11 @@
 
 \section{Modelos de um neurônio}
 
+{\bf Pré-requisitos:}
+\ghlink{Functions/Abstract_pt.pdf}{Funções},
+\ghlink{Functions/Abstract_pt.pdf}{Limites*},
+\difflink{Derivadas}
+
 \subsection{Um exemplo de função logística é definida por}
 $$
 \varphi(v)=\frac{1}{1+\exp(-av)}
@@ -44,7 +58,60 @@ $\varphi(v)$ em relação a $v$ é dada por
 $$
 \df{\varphi}{v}=a\varphi(v)[1-\varphi(v)]
 $$
-Qual é o valor desta derivada na origem?
+Qual é o valor desta derivada na origem?\\
+
+\begin{solution}
+
+  Para resolver podemos utilizar a \difflink{regra da cadeia}. Tomando
+  a substituição com $u(v)=1+e^{-av}$, sabemos que $u'(x)=-ae^{-av}$.
+  Portanto temos:
+  $$\varphi(v)=\frac{1}{u(v)}=u^{-1}(v)\implies\varphi'(v)=-u^{-2}(v)u'(v)$$
+  $$\varphi'(v)=\frac{ae^{-av}}{1+e^{-av}}=ae^{-av}\varphi^2(v)$$
+  Podemos isolar $e^{-av}$ em função de $\varphi(v)$:
+  $$e^{-av}=\frac{1}{\varphi(v)}-1=\frac{1-\varphi(v)}{\varphi(v)}$$
+  E por fim:
+  $$
+  \df{\varphi}{v}(v)=\frac{a\varphi^2(v)[1-\varphi(v)]}{\varphi(v)}\implies
+  \df{\varphi}{v}(v)=a\varphi(v)[1-\varphi(v)]
+  $$
+
+  Para calcular o valor da derivada na origem basta calcular:
+  $\displaystyle \varphi(0)=\frac{1}{1+e^{-a\cdot0}}=\frac{1}{2}$. E
+  aplicando na derivada:
+  $$
+  \df{\varphi}{v}(0)=a\varphi(0)[1-\varphi(0)]\implies
+  \df{\varphi}{v}(0)=\frac{a}{4}
+  $$
+
+  Para criar um esboço da função podemos tomar os seguintes limites:
+  $$
+  \lim_{v\to+\infty}\varphi(v)=\lim_{v\to+\infty}\frac{1}{1+e^{-av}},
+  \lim_{v\to+\infty}e^{-\infty}=0\implies \lim_{v\to+\infty}\varphi(v)=1
+  $$
+  $$
+  \lim_{v\to-\infty}\varphi(v)=\lim_{v\to-\infty}\frac{1}{1+e^{-av}},
+  \lim_{v\to-\infty}e^{+\infty}=\infty\implies \lim_{v\to+\infty}\varphi(v)=0
+  $$
+
+  \newpage
+
+  Portanto, o gráfico da função é:
+  \begin{center}
+    \begin{tikzpicture}
+      \begin{axis}[
+          axis lines = center,
+          xlabel = \(v\),ylabel ={\(\varphi(v)\)},
+          yscale = 0.5,
+          xtick distance = 11, ytick distance = 1,
+          extra x ticks={0}, extra x tick labels={0},
+          extra y ticks={0.5}, extra y tick labels={\(\frac{a}{2}\)},
+        ]
+        \addplot [domain=-10:10,color=red]{1 / (1 + exp(-x))};
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
+
+\end{solution}
 
 \subsection{Uma função sigmóide ímpar é definida por}
 $$
@@ -58,7 +125,17 @@ $$
 $$
 Qual é  valor desta derivada na origem? Suponha que o parâmetro de
 inclinação $a$ seja infinitamente grande. Qual é a forma resultante de
-$\varphi(v)$?
+$\varphi(v)$?\\
+
+\begin{solution}
+
+  Podemos resolver utilizando a \difflink{derivada da divisão}, a
+  \difflink{regra da cadeia} e o
+  \ghlink{/BasicAlgebra/SpecialProducts.pdf}{quadrado da soma}.
+  Aplicando temos:
+  $$\varphi'(v)=\frac{ae^{-av}(1+e^{-av})+ae^{-av}(1-e^{-av})}{(1+e^{-av})^2}=a\frac{a[]}{(1+e^{-av})^2}$$
+
+\end{solution}
 
 \subsection{Uma outra função sigmóide ímpar é a sigmóide algébrica:}
 $$
