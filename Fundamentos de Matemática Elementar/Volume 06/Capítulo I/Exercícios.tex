@@ -276,10 +276,10 @@
     $\Rightarrow 2. \ (a^2-b^2)^2 - 4a^2b^2 < 0 \Rightarrow
     (a^2-b^2)^2 < 4a^2b^2$
     \begin{itemize}
-      \item[$\bullet$] $a=0, b \neq 0 \Rightarrow (-b^2)^2 < 0 \Rightarrow
+      \item $a=0, b \neq 0 \Rightarrow (-b^2)^2 < 0 \Rightarrow
         b^4 < 0 \Rightarrow \bot$
-      \item[$\bullet$] $a \neq 0, b=0 \Rightarrow a^4 < 0 \Rightarrow \bot$
-      \item[$\bullet$] $a = \pm b, a \neq 0, b \neq 0 \Rightarrow ((\pm
+      \item $a \neq 0, b=0 \Rightarrow a^4 < 0 \Rightarrow \bot$
+      \item $a = \pm b, a \neq 0, b \neq 0 \Rightarrow ((\pm
         b)^2 - b^2)^2 < 4(\pm b)^2 b^2 \Rightarrow 0 < 4b^4, \forall b \neq 0$
     \end{itemize}
 
@@ -394,7 +394,19 @@
   \end{qitem}
 
   \begin{qitem} % QUESTION 29
-    ...
+    $\displaystyle z=x+iy,x^2+y^2\ne 0, \text{Im}(z+\frac{1}{z})=0,z=?$
+
+    \color{red}
+    $\displaystyle
+    z+\frac{1}{z}=\frac{(x+iy)(x+iy)+1}{x+iy}\cdot\frac{(x-iy)}{(x-iy)}=\frac{(x-iy)(x^2-y^2+2xyi+1)}{x^2+y^2}$
+
+    $\displaystyle
+    =\frac{(x,-y)}{x^2+y^2}(x^2-y^2+1,2xy)=\frac{(x(x^2-y^2+1)+2xy^2,2x^2y-y(x^2-y^2+1),)}{x^2+y^2}$
+
+    $\displastyle \implies Im(z+\frac1z)=2x^2y-y(x^2-y^2+1)=0\implies
+    2x^2\cancel{y}=\cancel{y}(x^2-x^2+1)$
+
+    $\displaystyle \implies 2x^2=x^2-y^2+1\implies x^2+y^2=1$
   \end{qitem}
 
   \begin{qitem} % QUESTION 30
@@ -448,7 +460,14 @@
   \end{qitem}
 
   \begin{qitem} % QUESTION 34
-    ...
+    $\displaystyle \frac{z}{1-i}+\frac{z-1}{1+i}=\frac{5}{2}+\frac{5}{2}i, z=?$
+
+    \color{red}
+    $\displaystyle
+    \frac{z(1+i)+(z-1)(1-i)}{(1-i)(1+i)}=\frac52(1+i)\implies
+    z+\cancel{zi}+z-\cancel{zi}-1+i=\frac{5}{\cancel{2}}\cdot \cancel{2}(1+i)$
+
+    $\displaystyle 2z-1+i=5(1+i)\implies 2z=5+5i+1-i=6+4i\implies z=3+2i$
   \end{qitem}
 
   \begin{qitem} % QUESTION 35
@@ -488,7 +507,18 @@
   \end{qitem}
 
   \begin{qitem} % QUESTION 38
-    ...
+    Prove que se a equação $x^2+(a+bi)x+(c+di)=0$, com
+    $a,b,c,d\in\mathbb R$, admite uma raiz real então $abd=d^2+b^2c$.
+
+    \color{red}
+    $\exists x\in\mathbb\implies x^2+ax+bxi+c+di=0\implies
+    (x^2+ax+c,xb+d)=0\implies
+    \begin{cases}x^2+ax+c=0\\xb+d=0
+    \end{cases}$
+
+    $\displaystyle \implies x=\frac{-d}{b}\implies
+    \frac{d^2}{b^2}+\frac{a(-d)}{b}+c=0\implies
+    d^2-abd+cb^2=0\implies abd=d^2+cb^2$
   \end{qitem}
 
   \begin{qitem} % QUESTION 39
@@ -505,11 +535,105 @@
   \end{qitem}
 
   \begin{qitem} % QUESTION 40
-    ...
+    $z\in\mathbb C|z^3=\overline z$
+
+    \color{red}
+    $(x^2-y^2,2xy)(x,y)=(x^2-xy^2-2xy^2,x^2y-y^3+2x^2y)=(x,-y)$
+
+    $\implies(x^3-3xy^2,y^3-3x^2y)=(x,y)\implies
+    \begin{cases}x(x^2-3y^2-1)=0\\y(y^2-3x^2-1)=0
+    \end{cases}$
+
+    $\implies 1. \ x=y=0\implies z=0$
+
+    $\implies 2. \ x\ne 0\wedge y= 0\implies x^2-3y^2-1=0\implies
+    x=\pm 1\implies z=\pm 1$
+
+    $\implies 3. \ x=0\wedge y\ne 0\implies x^2-3y^2-1=0\implies
+    y=\pm 1\implies z=\pm i$
+
+    $\implies 4. \ x\ne 0\wedge y\ne 0\implies
+    \begin{cases}x^2-3y^2-1=0\\y^2-3x^2-1=0
+    \end{cases}\implies y^2-3(1+3y^2)-1=0$
+
+    $\qquad\implies -8y^2=4\implies
+    y\in\mathbb C\implies \bot$
   \end{qitem}
 
   \begin{qitem} % QUESTION 41
-    ...
+    $z\in\mathbb R|z^2=i$
+
+    \color{red}
+    $(x^2-y^2,2xy)=(0,1)\implies
+    \begin{cases}x^2=y^2\\2xy=1
+    \end{cases}\implies
+    \begin{cases}x=\pm y\\xy=\frac12
+    \end{cases}$
+
+    $\implies
+    \begin{cases}x=y\implies\displaystyle x^2=\frac12\implies\displaystyle
+      x=y=\pm\frac{\sqrt{2}}2\\
+
+      \displaystyle x=-y\implies x^2=-\frac12\implies x\in\mathbb C\implies \bot
+    \end{cases}$
+  \end{qitem}
+
+  \begin{qitem} % QUESTION 42
+    $z\in\mathbb C|z^2=1+i\sqrt{3}$
+
+    \color{red}
+    $(x^2-y^2,2xy)=(1,\sqrt{3})\implies
+    \begin{cases}x^2=1+y^2\\2xy=\sqrt{3}\implies 4x^2y^2=3
+    \end{cases}\implies 4x^2y^2=4y^2(1+y^2)$
+
+    $\displaystyle \implies y^4+y^2-\frac34=0\implies k^2+k-\frac34=0
+    \quad (k=y^2)\implies
+    k=\frac{-1\pm\sqrt{1-\cancel{4}\cdot\displaystyle\frac{3}{\cancel{4}}}}{2}=
+    \begin{cases}\displaystyle\frac12\\\\\displaystyle\frac{-3}{2}
+    \end{cases}$
+
+    $\implies y=
+    \begin{cases}\displaystyle\pm\frac{\sqrt{2}}{2}\implies
+      \begin{cases}\displaystyle
+        y=\frac{\sqrt{2}}{2}\implies x=\frac{\sqrt{6}}{2}\\\\
+        \displaystyle
+        y=-\frac{\sqrt{2}}{2}\implies x=-\frac{\sqrt{6}}{2}
+      \end{cases}
+      \\\\\displaystyle\pm\sqrt{\frac{-3}{2}}\implies
+      y\in\mathbb C\implies \bot
+    \end{cases}$
+
+    $\displaystyle\therefore
+    z=\frac{\sqrt{6}}{2}+\frac{\sqrt{2}}{2}i$ ou $\displaystyle
+    z=-\frac{\sqrt{6}}{2}-\frac{\sqrt{2}}{2}i$
+  \end{qitem}
+
+  \begin{qitem} % QUESTION 43
+    Prove que $\displaystyle x^2+y^2=1\implies \frac{1+x+iy}{1+x-yi}=x+iy$.
+
+    \color{red}
+    $\displaystyle
+    \frac{1+x+iy}{1+x-iy}\cdot\frac{1+x+iy}{1+x+iy}=\frac{(1+x,y)(1+x,y)}{(1+x,-y)(1+x,y)}=\frac{(x^2+2x+1-y^2,2y(x+1))}{x^2+2x+1+y^2}$
+
+    $\displaystyle
+    =\frac{(x^2+2x+x^2,2y(x+1))}{2x+2}=\frac{2x(x+1),2y(x+1)}{2(x+1)}=x+iy$
+  \end{qitem}
+
+  \begin{qitem} % QUESTION 44
+    Prove que $\displaystyle \frac{1+\sin x+i\cos x}{1-\sin x-i\cos
+    x}=(\tan x+\sec x)i,\forall x\ne\frac{\pi}{2}+k\pi$.
+
+    \color{red}
+    $\displaystyle \frac{\displaystyle\frac{1}{\cos x}+\frac{\sin x}{\cos
+    x}+i\frac{\cos x}{\cos x}}{\displaystyle\frac{1}{\cos x}-\frac{\sin x}{\cos
+    x}-i\frac{\cos x}{\cos x}}=\frac{\sec x+\tan x +i}{\sec x-\tan
+    x-i}\cdot\frac{\sec x-\tan x+i}{\sec x-\tan x+i}$
+
+    $\displaystyle=\frac{(\sec^2 x-\tan^2x-1,\sec x+\tan x+\sec
+    x-\tan x)}{\sec^2-2\sec x\tan x+\tan^2x+1}=\frac{(0, 2\sec
+    x)}{2\sec x(\sec x-\tan x)}\cdot\frac{\sec x+\tan x}{\sec x +\tan x}$
+
+    $=(\tan x+\sec x)i$
   \end{qitem}
 
 \end{enumerate}
