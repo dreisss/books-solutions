@@ -28,6 +28,8 @@
 \begin{enumerate}[\bfseries a)]}{
 \end{enumerate}\vspace{10pt}}
 
+\newcommand{\cis}[1]{\displaystyle(\cos#1+i\sin#1)}
+
 % -----------------------------------------------------------------------------
 
 \title{\vspace{-2cm}Soluções - FME, Volume 06}
@@ -634,6 +636,245 @@
     x)}{2\sec x(\sec x-\tan x)}\cdot\frac{\sec x+\tan x}{\sec x +\tan x}$
 
     $=(\tan x+\sec x)i$
+  \end{qitem}
+
+  \newcommand{\rhocis}[4]{$\color{red}
+    \begin{cases}\rho=\displaystyle#1\\\cos\theta=\displaystyle#2\\\sin\theta=\displaystyle#3
+  \end{cases}\implies\displaystyle #4\color{black}$}
+
+  \begin{qmitem} % QUESTION 45
+  \item $4$
+
+    \rhocis{\sqrt{4^2}=4}{1}{0}{4=4\cis0}
+
+  \item $1+i\sqrt3$
+
+    \rhocis{\sqrt{1^2+(\sqrt{3})^2}=\sqrt{4}=2}{\frac{1}{2}}{\frac{\sqrt{3}}{2}}{1+i\sqrt{3}=2\cis{\displaystyle\frac{\pi}{3}}}
+
+  \item $3i$
+
+    \rhocis{\sqrt{3^2}=3}{0}{\frac33=1}{3i=3\cis{\frac{\pi}{2}}}
+
+  \item $\sqrt{2}+i\sqrt{2}$
+
+    \rhocis{(\sqrt2)^2+(\sqrt2)^2=\sqrt{4}=2}{-\frac{\sqrt2}{2}}{\frac{\sqrt2}{2}}{\sqrt2+i\sqrt2=2\cis{\frac{3\pi}{4}}}
+
+  \item $-5$
+
+    \rhocis{\sqrt{5^2}=5}{1}{0}{-5=5\cis{\pi}}
+
+  \item $-2i$
+
+    \rhocis{\sqrt{2^2}=2}{0}{\frac{-2}{2}=-1}{-2i=2\cis{\frac{3\pi}{2}}}
+
+  \item $-5-5i$
+
+    \rhocis{\sqrt{5^2+5^2}=\sqrt{2\cdot5^2}=5\sqrt{2}}{\frac{-5}{5\sqrt{2}}=-\frac{\sqrt2}{2}}{\frac{-5}{5\sqrt{2}}=-\frac{\sqrt2}{2}}{-5-5i=5\sqrt2\cis{\frac{5\pi}{4}}}
+
+  \item $2-2i$
+
+    \rhocis{\sqrt{2^2+2^2}=\sqrt{2^3}=2\sqrt2}{\frac{2}{2\sqrt2}=\frac{\sqrt2}{2}}{-\frac{2}{2\sqrt2}=-\frac{\sqrt2}{2}}{2-2i=2\sqrt2\cis{\frac{7\pi}{4}}}
+
+  \end{qmitem}
+
+  \begin{qmitem} % QUESTION 46
+  \item $|3-4i|\color{red}=\sqrt{3^2+(-4)^2}=\sqrt{9+16}=\sqrt{25}=5$
+  \item
+    $|\sqrt{2}-i\sqrt{2}|\color{red}=\sqrt{(\sqrt{2})^2+(\sqrt{2})^2}=\sqrt{2+2}=\sqrt{4}=2$
+  \item $|12+5i|\color{red}=\sqrt{12^2+5^2}=\sqrt{144+25}=\sqrt{169}=13$
+  \item
+    $|\cos\theta+i\sin\theta|\color{red}=\sqrt{\cos^2\theta+\cos^2\theta}=\sqrt{1}=1$
+  \item
+    $|\tan\theta+i|\color{red}=\sqrt{\tan^2\theta+1^2}=\sqrt{\sec^2\theta}=|\sec\theta|$
+  \item $|24+7i|\color{red}=\sqrt{24^2+7^2}=\sqrt{625}=25$
+  \end{qmitem}
+
+  \begin{qitem} % QUESTION 47
+    $\displaystyle\left|\frac{a+bi}{a-bi}\right|\color{red}=\left|\frac{a+bi}{a-bi}\cdot\frac{a+bi}{a+bi}\right|=\frac{|a^2-b^2+2abi|}{a^2+b^2}=\frac{\sqrt{(a^2-b^2)^2+(2ab)^2}}{a^2+b^2}$
+
+    $\displaystyle\color{red}=\frac{\sqrt{a^4-2a^2b^2+b^4+4a^2b^2}}{a^2+b^2}=\frac{\sqrt{(a^2)^2+2a^2+b^2+(b^2)^2}}{a^2+b^2}=\frac{\sqrt{(a^2+b^2)^2}}{a^2+b^2}=\frac{a^2+b^2}{a^2+b^2}=1$
+  \end{qitem}
+
+  \begin{qitem} % QUESTION 48
+    $\displaystyle \left|\frac{1}{1+i\tan x}\right|,x\ne\frac{\pi}{2}+k\pi$
+
+    \color{red}
+    $\displaystyle\left|\frac{1}{1+i\tan x}\cdot\frac{1-i\tan
+    x}{1-i\tan x}\right|=\left|\frac{1-i\tan x}{1^2+\tan^2
+    x}\right|=\frac{|1-i\tan x|}{\sec^2 x}$
+
+    $\displaystyle=\frac{\sqrt{1^2+\tan^2
+    x}}{\sec^2 x}=\frac{\sqrt{\sec^2 x}}{\sec^2 x}=\frac{1}{\sec x}=\cos x$
+  \end{qitem}
+
+  \begin{qmitem} % QUESTION 49
+  \item $3+3i$
+
+    \rhocis{\sqrt{3^2+3^2}=\sqrt{2\cdot3^2}=3\sqrt{2}}{\frac{3}{3\sqrt{2}}=\frac{\sqrt{2}}{2}}{\frac{3}{3\sqrt{2}}=\frac{\sqrt{2}}{2}}{3+3i=3\sqrt{2}\cis{\frac{\pi}{4}}}
+
+  \item $5-i5\sqrt{3}$
+
+    \rhocis{\sqrt{5^2+5^2\sqrt{3^2}}=\sqrt{25+3\cdot25}=\sqrt{100}=10}{\frac{5\sqrt{3}}{10}=-\frac{\sqrt{3}}{2}}{\frac{5}{10}=\frac{1}{2}}{3-i5\sqrt{3}=10(\cos\frac{\pi}{4}+i\sin\frac{5\pi}{3})}
+
+  \item $-8-8i=-8(1+i)$
+
+    \rhocis{\sqrt{1^2+1^2}=\sqrt{2}}{-\frac{\sqrt2}{2}}{-\frac{\sqrt2}{2}}{-8-8i=8\sqrt2\cis{\frac{5\pi}{4}}}
+
+  \item $11$
+
+    \rhocis{\sqrt{11^2}=11}{\frac{11}{11}=1}{\frac{0}{11}=0}{11=11\cis0}
+
+  \item $2i$
+
+    \rhocis{\sqrt{2^2}=2}{\frac{0}{2}=0}{\frac{2}{2}=1}{2i=2\cis{\frac{\pi}{2}}}
+
+  \item $i^3=-i$
+
+    \rhocis{\sqrt{1^2}=1}{\frac01}{\frac{-1}{1}=-1}{i^3=1\cis{\frac{3\pi}{2}}}
+
+  \item $-\sqrt{3}+i$
+
+    \rhocis{\sqrt{(\sqrt3)^2+1^2}=\sqrt4=2}{-\frac{\sqrt3}{2}}{\frac{\sqrt{2}}{2}}{-\sqrt{3}+i=2\cis{\frac{5\pi}{6}}}
+
+  \item $i(1+i)=-1+i$
+
+    \rhocis{\sqrt{1^2+1^2}=\sqrt{2}}{-\frac{\sqrt2}{2}}{\frac{\sqrt2}{2}}{i(1+i)=\sqrt{2}\cis{\frac{3\pi}{4}}}
+
+  \item $2i(1-i)=2+2i$
+
+    \rhocis{\sqrt{2^2+2^2}=\sqrt{8}=2\sqrt2}{\frac{\sqrt2}{2}}{\frac{\sqrt}{2}}{2i(1-i)=2\sqrt2\cis{\frac{\pi}{4}}}
+  \end{qmitem}
+
+  \newcommand{\xy}[3]{\color{red}$
+    \begin{cases}\displaystyle x=#1\\\displaystyle y=#2
+  \end{cases}\implies#3$\color{black}}
+
+  \begin{qmitem} % QUESTION 50
+  \item $3\cis{\pi}$
+
+    \xy{3\cos\pi=-3}{3\sin\pi}{-3}
+
+  \item $2\cis{\frac{\pi}{4}}$
+
+    \xy{2\cos{\frac{\pi}{4}=2\cdot\frac{\sqrt2}{2}=\sqrt2}}{2\sin\frac{\pi}{4}=2\cdot\frac{\sqrt2}{2}=\sqrt2}{\sqrt2+i\sqrt2}
+
+  \item $4\cis{\frac{11\pi}{6}}$
+
+    \xy{4\cos\frac{11\pi}{6}=4\cos(2\pi-\frac{\pi}{6})=4\cdot\frac{\sqrt3}{2}=2\sqrt{3}}{4\sin\frac{11\pi}{6}=4\sin(2\pi-\frac{\pi}{6})=-4\cdot\frac{1}{2}=-2}{2\sqrt3-2i}
+
+  \item $4\cis{\frac{3\pi}{2}}$
+
+    \xy{5\cdot0=0}{5\cdot-1=-5}{-5i}
+  \end{qmitem}
+
+  \begin{qmitem} % QUESTION 51
+  \item $|(1-i)(2-2i)|\color{red}=|2(1-i)^2|=|2\cdot2i|=|4i|=4$
+
+  \item
+    $|(1+i\sqrt3)^6|\color{red}=(|1+i\sqrt3|)^6=(\sqrt{1^2+(\sqrt3)^2})^6=2^6=64$
+
+  \item $\displaystyle
+    \left|\frac{3+3i}{1+2i}\right|\color{red}=\frac{|3+3i|}{|1+2i|}=\frac{\sqrt{3^2+3^2}}{\sqrt{1^2+2^2}}=\frac{3\sqrt2}{\sqrt5}\cdot\frac{\sqrt5}{\sqrt5}=\frac{3\sqrt{10}}{5}$
+  \end{qmitem}
+
+  \begin{qmitem} % QUESTION 52
+  \item $|1+i||3|\color{red}=3\sqrt{1^2+1^2}=3\sqrt2$
+
+  \item $|1-i|^4\color{red}=|\sqrt2|^4=2^2=4$
+
+  \item $|5+12i||i|\color{red}=\sqrt{5^2+12^2}=\sqrt{169}=13$
+
+  \item
+    $|1+i||2+2i||4+4i|\color{red}=\sqrt{2}\cdot\sqrt{8}\cdot\sqrt{32}=\sqrt{2\cdot2^3\cdot
+    2^5}=\sqrt{2^8\cdot 2}=2^4\sqrt{2}=16\sqrt2$
+
+  \item $\displaystyle
+    \frac{|1+i|}{|2-2i|}\color{red}=\frac{\sqrt2}{\sqrt8}\cdot\frac{\sqrt8}{\sqrt8}=\frac{\sqrt{2^4}}{8}=\frac48=\frac12$
+
+  \item $\displaystyle
+    \frac{|5i|}{|3+4i|}\color{red}=\frac{5}{\sqrt{3^2+4^2}}=\frac{5}{\sqrt{25}}=1$
+  \end{qmitem}
+
+  \begin{qmitem} % QUESTION 53
+  \item
+    $\displaystyle
+    \left(\frac12+\frac{i\sqrt3}{2}\right)^2\color{red}=\frac{1}{2}(1+i\sqrt{3})^2=\frac{1}{4}(-2+2i\sqrt{3})=\frac{-1}{2}+\frac{\sqrt{3}}{2}$
+
+    $\color{red}$
+
+    \rhocis{\displaystyle
+    \sqrt{\left(\frac12\right)^2+\left(\frac{\sqrt{3}}{2}\right)^2}=1}{\frac{-1}{2}}{\frac{\sqrt3}{2}}{1\cis{\frac{2\pi}{3}}}
+
+  \item $\displaystyle \frac{1+i}{i}\color{red}=1-i$
+
+    \rhocis{\sqrt{1^2+1^2}=\sqrt2}{\frac{\sqrt2}{2}}{\frac{-\sqrt2}{2}}{\sqrt2\cis{\frac{7\pi}{4}}}
+
+  \item $\displaystyle
+    5(\cos30^\circ-i\sin30^\circ)\color{red}=5(\cos\frac{\pi}{6}+i\sin{\frac{-\pi}{6}})$
+
+    $\color{red}\implies5\cis{\frac{11\pi}{6}}$
+  \end{qmitem}
+
+  \begin{qitem} % QUESTION 54
+    $\displaystyle\frac{1}{1-i}-\frac{1}{i}\color{red}=\frac{i-1+i}{1+i}\cdot\frac{1-i}{1-i}=\frac{1+3i}{2}$
+
+    $\color{red}\displaystyle\implies \frac12+\frac32i$
+
+    \rhocis{\displaystyle\sqrt{\left(\frac12\right)^2+\left(\frac32\right)^2}=\sqrt{\frac14+\frac94}=\sqrt{\frac{10}{4}}=\frac{\sqrt{10}}{2}}{\frac12\cdot\frac{3}{\sqrt{10}}=\frac{\sqrt{10}}{10}}{\frac32\cdot\frac{2}{\sqrt{10}}=\frac{3\sqrt{10}}{10}}{\displaystyle\tan\theta=\frac{3\sqrt{10}}{10}\cdot\frac{10}{\sqrt{10}}=3}
+
+    $\displaystyle\color{red}\implies
+    \frac{\sqrt{10}}{2}\cis{(\text{atan }{3})}$
+  \end{qitem}
+
+  \begin{qitem} % QUESTION 55
+    $\displaystyle\frac{1}{1+i\sqrt3}\color{red}\cdot\frac{1-\sqrt3}{1-\sqrt3}=\frac{1-\sqrt3}{1+(\sqrt3)^2}=\frac14-\frac{\sqrt3}{4}i$
+
+    \rhocis{\displaystyle\sqrt{\frac{1}{4^2}+\frac{(\sqrt3)^2}{4^2}}=\sqrt{\frac{1}{16}+\frac{3}{16}}=\sqrt{\frac14}=\frac12}{\frac12}{\frac{-\sqrt3}{2}}{\displaystyle\frac12\cis{\frac{11\pi}{6}}}
+  \end{qitem}
+
+  \begin{qmitem} % QUESTION 56
+  \item
+    $\displaystyle\frac{5+5i}{2-2i}\color{red}=\frac52\left(\frac{1+i}{1-i}\right)\left(\frac{1+i}{1+i}\right)=\frac{10i}{2\cdot2}=\frac54i$
+
+    \rhocis{\frac54}{0}{1}{\frac52\cis{\frac{\pi}{2}}}
+
+  \item
+    $\displaystyle
+    \frac{1}{i}+(2-i)\color{red}=\frac{2(1+i)}{i}\cdot\frac{-i}{-i}=2(1-i)$
+
+    \rhocis{\sqrt{2^2(1^2+1^2)}=2\sqrt2}{\frac{\sqrt2}{2}}{\frac{-\sqrt2}{2}}{2\sqrt2\cis{\frac{7\pi}{4}}}
+
+  \item
+    $\displaystyle\frac{(1+i\sqrt3)^3}{i^5}\color{red}=\frac{(1+i\sqrt3)^2(1+i\sqrt3)}{i}\cdot\frac{-i}{-i}=(-2,2\sqrt3)(1,\sqrt3)(-i)=8i$
+
+    \rhocis{8}{0}{1}{8\cis{\frac{\pi}{2}}}
+
+  \end{qmitem}
+
+  \begin{qitem} % QUESTION 57
+    $\displaystyle z,w\in\mathbb C,|z|=|w|=1,1+zw\ne0,\frac{z+w}{1+zw}?$
+
+    \color{red}
+    $\displaystyle
+    \frac{z+w}{1+zw}\cdot\frac{1+\overline{zw}}{1+\overline{zw}}=\frac{z+z\overline{z}\overline{w}+w+z\overline{w}w}{1+\overline{zw}+zw+z\overline{z}w\overline{w}}=\frac{z+\overline{w}+w+\overline{z}}{1+\overline{zw}+zw+1}=\frac{\text{Re}(z)+\text{Re}(w)}{1+\text{Re}(zw)}$
+
+    \therefore $\displaystyle\frac{z+w}{1+zw}\in\mathbb R$
+  \end{qitem}
+
+  \begin{qitem} % QUESTION 58
+    $z_1=\rho\cis\phi,z_2=\rho(\sin\phi+i\cos\phi),z_1-iz_2\in\mathbb
+    R,\mathbb C,\mathbb I?$
+
+    \color{red}
+    $z_1i-iz_2=\rho\cis\phi-i\rho(\sin\phi+i\cos\phi)=\rho(\cos+i\sin\phi-i\sin\phi-i^2\cos\phi)$
+
+    $=2\rho\cos\phi\implies z_1-i\z_2\in\mathbb R$
+  \end{qitem}
+
+  \begin{qitem}
+    $|z_1|=|z_2|=1,z_1+z_2=1$
+
+    \color{red}...
   \end{qitem}
 
 \end{enumerate}
