@@ -871,10 +871,217 @@
     $=2\rho\cos\phi\implies z_1-i\z_2\in\mathbb R$
   \end{qitem}
 
-  \begin{qitem}
+  \begin{qitem} % QUESTION 59
     $|z_1|=|z_2|=1,z_1+z_2=1$
 
-    \color{red}...
+    \color{red}
+    $a+bi+c+di=1\implies
+    \begin{cases}a+c=1\\b+d=0
+    \end{cases}\implies
+    \begin{cases}c=1-a\\d=-b
+    \end{cases}$
+
+    $
+    \begin{cases}a^2+b^2=1\\c^2+d^2=1
+    \end{cases}\implies(1-a)^2+(-b)^2=1\implies a^2+b^2=2a\implies
+    a=\displaystyle\frac12\implies c=\frac12$
+
+    $\displaystyle\implies b^2=1-\frac14\implies
+    b=\frac{\sqrt{3}}{2}\implies d=-\frac{\sqrt{3}}{2}$
+
+    $\displaystyle z_1=\frac12+\frac{\sqrt3}{2}i$
+
+    $\displaystyle z_2=\frac12-\frac{\sqrt3}{2}i$
+  \end{qitem}
+
+  \begin{qitem} % QUESTION 60
+    $\displaystyle
+    z=\frac{(1+i)^2}{1-i}\color{red}=\frac{2i}{1-i}\cdot\frac{1+i}{1+i}=\frac{2i-2}{2}=i-1$
+
+    \rhocis{\sqrt{1^2+1^2}=\sqrt2}{\frac{\sqrt2}{2}}{-\frac{\sqrt2}{2}}{\sqrt2\cis{\frac{7\pi}{4}}}
+  \end{qitem}
+
+  \begin{qmitem} % QUESTION 61
+  \item $3+5i$
+
+    \rhocis{\sqrt{3^2+5^2}=\sqrt{34}}{\frac{3\sqrt{34}}{34}}{\frac{5\sqrt{34}}{34}}{\theta=\text{atan
+    }\frac53}
+
+  \item $-3+2i$
+
+    \rhocis{\sqrt{3^2+2^2}=\sqrt{13}}{\frac{-3\sqrt{13}}{13}}{\frac{2\sqrt{13}}{13}}{\theta=\text{atan
+    }\frac{-2}{3}}
+
+  \item $-2-3i$
+
+    \rhocis{\sqrt{2^2+3^2}=\sqrt{13}}{\frac{-2\sqrt{13}}{13}}{\frac{-3\sqrt{13}}{13}}{\theta=\text{atan
+    }\frac32}
+
+  \item $1-4i$
+
+    \rhocis{\sqrt{1^2+4^2}=\sqrt{17}}{\frac{\sqrt{17}}{17}}{\frac{-4\sqrt{17}}{17}}{\theta=\text{atan
+    }{-4}}
+  \end{qmitem}
+
+  \begin{qitem} % QUESTION 62
+    Dado $z_1=\rho_1\cis{\theta_1}, z_2=\rho_2\cis{\theta_2}$, prove
+    que $|z_1+z_2|\le|z_1|+|z_2|$.
+
+    \color{red}
+    $z_1+z_2=(\rho_1\cos{\theta_1}+\rho_2\cos{\theta_2})+i(\rho_1\sin{\theta_1}+\rho_2\sin{\theta_2})$
+
+    $|z_1+z_2|=\sqrt{(\rho_1^2\cos^2{\theta_1}+2\rho_1\rho_2\cos{\theta_1}\cos{\theta_2}+\rho_2^2\cos^2{\theta_2})+...$
+
+    \qquad\qquad\quad$\overline{...+(\rho_1^2\sin^2{\theta_1}+2\rho_1\rho_2\sin{\theta_1}\sin{\theta_2}+\rho_2^2\sin^2{\theta_2})}}$
+
+    $=\sqrt{\rho_1^2(\cos^2{\theta_1}+\sin^2{\theta_1})+\rho_2(\cos^2{\theta_2}+\sin^2{\theta_2})+2\rho_1\rho_2(\cos{\theta_1}\cos{\theta_2}+\sin{\theta_1}\sin{\theta_2})}$
+
+    $=\sqrt{\rho_1^2+\rho_2^2+2\rho_1\rho_2\cos(\theta_1-\theta_2)}$
+
+    Como $\cos(\theta_1-\theta_2)$ é no máximo 1, então:
+
+    $|z_1+z_2|\le\sqrt{(\rho_1+\rho_2)^2}=|z_1|+|z_2|$
+  \end{qitem}
+
+  \begin{qitem} % QUESTION 63
+    {\color{red} A soma de dois números representa a soma de dois
+      vetores na origem, ou seja, um paralelogramo em que os vértices
+    são: a origem, cada número na operação e o resultado da soma}
+  \end{qitem}
+
+  \begin{qmitem} % QUESTION 64
+  \item $A=\{z\in\mathbb C:|z|=2\}${\color{red} - circunferência de
+    raio $2$ centrada na origem}
+  \item $B=\{z\in\mathbb C:|z|\le3\}${\color{red} - círculo de raio
+    $3$ centrada na origem}
+  \item $C=\{z\in\mathbb C:|z-i|=1\}${\color{red} - circunferência de
+    raio $1$ centrada em $(0,1)$}
+
+    {\color{red}- O $-i$ move todo o plano para baixo, e para
+    compensar os pontos devem mudar para cima}
+  \end{qmitem}
+
+  \begin{qitem} % QUESTION 65
+    Dados $b=2\cis{30^\circ}\text{ e } z=\rho\cis\theta$, qual a
+    figura formada pelos afixos de $b,b+z,b+z+iz,b+iz$?
+
+    \color{red}
+    Podemos verificar geometricamente que para qualquer $z$ e um
+    ponto fixo $b$ podemos criar um quadrado em que todos os lados
+    tem lado de tamanho $|z|$.
+
+    Os números complexos que representam cada um dos lados desse quadrado são:
+    \begin{enumerate}[1. ]
+      \item $b+z-b=z$
+      \item $b+z+iz-(b+z)=iz$
+      \item $b+z+iz-(b+iz)=z$
+      \item $b-(b+iz)=-iz$
+    \end{enumerate}
+
+    Todos tem módulo $z$. Além disso podemos verificar que $iz$ e $z$
+    são perpendiculares e de mesmo módulo, o mesmo vale para os
+    outros dois lados.
+  \end{qitem}
+
+  \begin{qitem} % QUESTION 66
+    $\displaystyle z=x+yi,\frac{z}{\overline{z}}=-i$
+
+    \color{red}
+    $z=-i\overline{z}\implies (x+yi)=-i(x-yi)\implies
+    \begin{cases}x=-y\\y=-x
+    \end{cases}$
+
+    $\implies z=x-xi=x(1-i)\iff y=-x$
+  \end{qitem}
+
+  \begin{qitem} % QUESTION 67
+    $\displaystyle\frac{z_1}{z_2}\in\mathbb R,z_1,z_2\ne0$
+
+    \color{red}
+    $\displaystyle\frac{x+yi}{c+di}=r\implies
+    \begin{cases}x=rc\\y=rd
+    \end{cases}\implies y=\frac{d}{c}x$, uma reta qualquer que passe pela origem
+  \end{qitem}
+
+  \begin{qmitem} % QUESTION 68
+  \item $A=\{z\in\mathbb C:\text{Re}(z)=0\}${\color{red} - reta
+    vertical que passa pela origem}
+  \item $B=\{z\in\mathbb C:\text{Im}(z)=0\}${\color{red} - reta
+    horizontal que passar pela origem}
+  \item $D=\{z\in\mathbb C:\text{Re}(z)\ge1\text{ e
+    }\text{Im}(z)\ge2\}${\color{red} - área superior a direita
+    limitada pelas retas $x=2$ e $y=1$}
+  \item $E=\{z\in\mathbb C:|z|=1\}${\color{red} - circunferência de
+    raio $1$ centrado na origem}
+  \item $F=\{z\in\mathbb C:|z|\le2\}${\color{red} - círculo de raio
+    $2$ centrado na origem}
+  \end{qmitem}
+
+  \begin{qitem} % QUESTION 69
+    $|z-(1+i)|\ge1$
+
+    \color{red}
+    O plano é deslocado $1$ para baixo e $1$ para a esquerda, então
+    os pontos compensam, indo para $(1,1)$.
+
+    É uma círculo de raio $1$ centrado em $(1,1)$.
+  \end{qitem}
+
+  \begin{qitem} % QUESTION 70
+    $t=2+3i, A=\{z\in\mathbb C:|z-t|\le1\}, B=\{z\in\mathbb
+    C:z=a+bi,b\le3\}, A\cap B=?$
+
+    \color{red}
+    Metade de baixo do círculo de raio $1$ centrado em $(2,3)$.
+  \end{qitem}
+
+  \begin{qitem} % QUESTION 71
+    Fixado $\theta, \rho\cis\theta$
+
+    \color{red}
+    Pertence a reta com esse ângulo com eixo, $\rho$ é como um fator
+    de escala que mapeia a reta.
+  \end{qitem}
+
+  \begin{qmitem} % QUESTION 72
+  \item $\displaystyle\text{Re}(w)=u,\text{Im}(w)=v, w=1-\frac1z,z=x+yi$
+
+    \color{red}
+    $\displaystyle w=\frac{z-1}{z}\cdot\frac{\overline z}{\overline
+    z}=\frac{|z|-\overline z}{|z|^2}=\frac{x^2+y^2-x+yi}{x^2+y^2}$
+
+    $\displaystyle
+    (u,v)=\left(\frac{x^2+y^2-x}{x^2+y^2},\frac{y}{x^2+y^2}\right)$
+    \color{black}
+
+  \item $x=y$
+
+    $\color{red}
+    \begin{cases}
+      \displaystyle u=\frac{2x^2-x}{2x^2}=\frac{2x-1}{2x}\\
+      \displaystyle v=\frac{x}{2x^2}=\frac{1}{2x}
+    \end{cases}\implies u=v(\displaystyle\frac1v-1)=1-v$
+  \end{qmitem}
+
+  \begin{qitem} % QUESTION 73
+    $z:\theta$ é o menor argumento, para $|z-25i|\le15$
+
+    \color{red}
+    $|z-25i|\le$ representa um círculo de raio $15$ centrado em
+    $(0,25)$. Representando graficamente, o número complexo com menor
+    argumento será a reta que passa na origem e tangencia a
+    circunferência, formando o triângulo retângulo com pontos
+    $(0,0),z_0=(x,y),(0,25)$ e com lados $z_0,15$ e $25$.
+
+    Podemos usar pitágoras para calcular o módulo de $z_0:
+    25^2=15^2+|z_0|^2\implies |z_0|=20$
+
+    E podemos calcular o seno e cosseno de $\theta$ usando a própria definição:
+
+    $
+    \begin{cases}\displaystyle\cos\left(\frac{\pi}{2}-\theta\right)=\sin\theta=\frac{20}{25}=\frac45\\\displaystyle\sin\left(\frac{\pi}{2}-\theta\right)=\cos\theta=\frac{15}{25}=\frac35
+    \end{cases}\implies \displaystyle
+    z_0=20\left(\frac35+\frac45i\right)=12+16i$
   \end{qitem}
 
 \end{enumerate}
