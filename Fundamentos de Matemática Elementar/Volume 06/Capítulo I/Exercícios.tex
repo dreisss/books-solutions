@@ -1339,16 +1339,25 @@
 \end{qitem}
 
 \begin{qitem} % QUESTION 90
-  Uma das raízes de ordem $6$ de um número compleo é $-2$. Determine
+  Uma das raízes de ordem $6$ de um número complexo é $-2$. Determine
   as outras raízes de ordem $6$ desse número.
 
   \color{red}
+  Sabendo que $-2$ é uma raiz podemos aferir que o módulo do número é
+  $2$, e como existem 6 raízes separadas uniformemente a diferença de
+  graus é $2\pi/6=\pi/3$.
+
+  Logo, $z=2\cis{\frac{k\pi}{3}}=
+  \begin{cases}2\\1+i\sqrt3\\-1+i\sqrt3\\-2\\-1-i\sqrt3\\1-i\sqrt3
+  \end{cases}$
 \end{qitem}
 
 \begin{qitem} % QUESTION 91
   Determine graficamente as raízes quartas de $256$.
 
   \color{red}
+  As raízes são $-4,4,-4i,4i$, elas formam um quadrado centrado na
+  origem e com vértices nos afixos das raízes.
 \end{qitem}
 
 \begin{qitem} % QUESTION 92
@@ -1357,18 +1366,34 @@
   complexos são representados pelos outros cinco vértices do hexágono?
 
   \color{red}
+  Sabendo que são 6 raízes o ângulo entre cada um é $2\pi/6=\pi/3$, e
+  desenhando graficamente o hexágono fica fácil verificar que o
+  primeiro afixo está posicionado a um ângulo $(\pi/3)/2$. Além
+  disso, o módulo dos números é $2$. Logo,
+  $z=2\cis{\left(\frac{\pi}{6}+\frac{k\pi}{3}\right)}$
+
+  $=
+  \begin{cases}\sqrt3+i\\2i\\-\sqrt{3}+i\\-\sqrt3-i\\-2i\\\sqrt3-i
+  \end{cases}$
 \end{qitem}
 
 \begin{qitem} % QUESTION 93
   Represente graficamente os números $i=\sqrt[3]{-8i}$.
 
   \color{red}
+  Erro no comando aparentemente.
 \end{qitem}
 
 \begin{qitem} % QUESTION 94
   Represente graficamente as raízes de $(z-1+i)^4=1$.
 
   \color{red}
+  $(z-1+i)^4=1\implies
+  z-1+i=\sqrt[4]{1}=\pm\frac{\sqrt2}{2}\pm\frac{\sqrt2}{2}\implies
+  z=\left(1\pm\frac{\sqrt2}{2}\right)+\left(-1\pm\frac{\sqrt2}{2}\right)i$
+
+  As raízes estão dispostas no quadrado centrado em $(1,-1)$ com os
+  lados paralelos aos eixos e incrito em um círculo unitário.
 \end{qitem}
 
 \begin{qitem} % QUESTION 95
@@ -1376,6 +1401,17 @@
   complexo qualquer é zero.
 
   \color{red}
+  Considere $\rho=\sqrt[2]{|z|},
+  z_k=\rho\cis{\left(\theta_0+\frac{k\pi}{n}\right)}, k\in\{0,...,2n\}$
+
+  Para um $k_1\in\{0,...,n\}$ tome $k_2=k_1+n$. Então:
+
+  $z_{k_1}=\rho\cis{\left(\theta_0+\frac{k_1\pi}{n}\right)}$
+
+  $z_{k_2}=\rho\cis{\left(\theta_0+\frac{k_1\pi}{n}\right)+\pi}=-\rho\cis{\left(\theta_0+\frac{k_1\pi}{n}\right)}$
+
+  $\implies z_{k_1}+z_{k_2}=0\implies
+  z_0+z_1+...+z_{2n}=(z_0+z_n)+(z_1+z_{n+1})+...+(z_n+z_{2n})=0$
 \end{qitem}
 
 \begin{qitem} % QUESTION 96
@@ -1383,6 +1419,23 @@
   de Argand-Gauss, dos números complexos $z$ tais que $z^2=\overline zi?$
 
   \color{red}
+  $z^2=\overline zi\implies (a^2-b^2,2ab)=(b,a)\implies
+  \begin{cases}a^2-b^2=b\\2ab=a
+  \end{cases}\implies
+  \begin{cases}a^2=b(b+1)\\2ab=a
+  \end{cases}$
+
+  $a\ne 0\implies 2b=1\implies b=\frac12\implies
+  a^2=\frac12\cdot\frac32\implies a=\pm\frac{\sqrt3}{2}$
+
+  $a=0\implies b(b+1)=0\implies
+  \begin{cases}b=0\\b=-1
+  \end{cases}$
+
+  $\therefore
+  \begin{cases}a=0, b=0\\ a=0, b=-1 \\ a=\frac{\sqrt3}{2}, b=\frac12
+    \\ a=-\frac{\sqrt3}{2}, b=\frac12
+  \end{cases}\implies$ quatro
 \end{qitem}
 
 \begin{qitem} % QUESTION 97
@@ -1390,25 +1443,64 @@
   satisfazem: $|z-1|^2=2x$ e $y\ge 2$?
 
   \color{red}
+  $|(x-1,y)|^2=2x\implies (x-1)^2+y^2=2x\implies x^2-4x+1+y^2=0$
+
+  $(x-2)^2+y^2=3$
+
+  $y^2\ge 4\implies y^2=3-(x-2)^2\ge 4\implies -(x-2)^2\ge 1\implies
+  (x-2)^2\le -1\implies \bot$
+
+  As soluções estão em uma circunferência centrada em $(2,0)$ e de
+  raio $\sqrt3$, não cruza a linha de $y=2$.
+
 \end{qitem}
 
-\begin{qitem} % QUESTION 98
-  Qual o número complexo $z$ que verifica a equação: $iz+2\overline z+1-i=0$?
+Qual o número complexo $z$ que verifica a equação: $iz+2\overline z+1-i=0$?
 
+\begin{qitem} % QUESTION 98
   \color{red}
+  $(-b,a)+2(a,-b)+(1,-1)=0\implies
+  \begin{cases}2a-b=1\\a-2b=1
+  \end{cases}\implies
+  \begin{cases}a = \frac{3}{-3}=-1\\b=\frac{3}{-3}=-1
+  \end{cases}$
+
+  $\implies z=-(1+i)$
 \end{qitem}
 
 \begin{qitem} % QUESTION 99
-  Se $z=r\cis\theta$, qual é o número de soluçõe da equação $z^2+|z|=0$?
+  Se $z=r\cis\theta$, qual é o número de soluções da equação $z^2+|z|=0$?
 
   \color{red}
+  $r^2\cis{2\theta}+r=0\implies r(r\cis{2\theta}+1)=0$
+
+  $r=0\implies z=0$
+
+  $r\ne0\implies
+  \begin{cases}r\cos{2\theta}=-1\\r\sin{2\theta}=0
+  \end{cases}\implies \tan{2\theta}=0\implies \theta=\frac{k\pi}{2}=
+  \begin{cases}\theta_1=0\\\theta_2=\frac{\pi}{2}\\\theta_3=\pi\\\theta_4=\frac{3\pi}{2}
+  \end{cases}\implies r=1$
+
+  $
+  \begin{cases}
+    \cos{2\theta_1}=1\implies \bot\\
+    \cos{2\theta_2}=-1\\
+    \cos{2\theta_3}=1\implies \bot\\
+    \cos{2\theta_4}=-1
+  \end{cases}\implies
+  \begin{cases}
+    z=0\\
+    z=\cis{\frac{\pi}{2}}\\
+    z=\cis{\frac{3\pi}{2}}\\
+  \end{cases}$
 \end{qitem}
 
 \begin{qitem} % QUESTION 100
   Seja $z_k$ um número complexo, solução da equação $(z+1)^5+z^5=0,
   k\in\{0,1,2,3,4\}$.
 
-  Qual das proposições abaixo pe verdadeira?
+  Qual das proposições abaixo é verdadeira?
 
 \begin{enumerate}[\bfseries a) ]
   \item Todos os $z_k$ estão sobre uma circunferência.
@@ -1422,6 +1514,13 @@
 Resolva a equação binômia $x^3+i=0$.
 
 \color{red}
+$x=\sqrt[3]{-i}\implies
+\begin{cases}\rho=1\\\theta=\frac{3\pi}{2}
+\end{cases}\implies x_k=\cis{\left(\frac{\pi}{2}+\frac{3k\pi}{3}\right)}$
+
+$=
+\begin{cases}i\\-\frac{\sqrt3}{2}-\frac12i\\\frac{\sqrt3}{2}-\frac12i
+\end{cases}$
 \end{qitem}
 
 \begin{qmitem} % QUESTION 102
